@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class HomeRoute extends StatefulWidget {
-  HomeRoute({Key? key, required this.title}) : super(key: key);
+  const HomeRoute({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
@@ -28,7 +28,7 @@ class _HomeRouteState extends State<HomeRoute> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
+            const Text(
               'You have pushed the button this many times:',
             ),
             Text(
