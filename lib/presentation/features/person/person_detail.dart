@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../../model/person_dto.dart';
 
-class PersonDetailRoute extends StatelessWidget {
-  const PersonDetailRoute({
+class PersonDetail extends StatelessWidget {
+  const PersonDetail({
     required this.person,
     Key? key,
   }) : super(key: key);
