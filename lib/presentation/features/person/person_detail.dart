@@ -12,19 +12,40 @@ class PersonDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-      body: Container(
-        alignment: Alignment.center,
-        decoration: const BoxDecoration(color: Colors.orange),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(person.firstName),
-            Text(person.lastName),
-            Text(person.phone.toString()),
-          ],
-        ),
+    return Container(
+      alignment: Alignment.center,
+      decoration: const BoxDecoration(color: Colors.orange),
+      child: LayoutBuilder(
+        builder: (BuildContext context, BoxConstraints constraints) {
+          if (constraints.maxHeight > 200) {
+            return Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text('${person.firstName} ${person.lastName}'),
+                Text(person.phone.toString()),
+                ElevatedButton(
+                  onPressed: () {},
+                  child: const Text(
+                    'Contact Me',
+                  ),
+                ),
+              ],
+            );
+          } else {
+            return Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Text('${person.firstName} ${person.lastName}'),
+                ElevatedButton(
+                  onPressed: () {},
+                  child: const Text(
+                    'Contact Me',
+                  ),
+                ),
+              ],
+            );
+          }
+        },
       ),
     );
   }

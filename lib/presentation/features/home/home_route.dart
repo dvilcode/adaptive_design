@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'widgets/medium_layout.dart';
 import 'widgets/narrow_layout.dart';
 import 'widgets/wide_layout.dart';
 
@@ -16,8 +17,10 @@ class HomeRoute extends StatelessWidget {
       ),
       body: LayoutBuilder(
         builder: (context, constraints) {
-          if (constraints.maxWidth > 400) {
+          if (constraints.maxWidth > 700) {
             return const WideLayout();
+          } else if (constraints.maxWidth > 400 && constraints.maxWidth < 700) {
+            return const MediumLayout();
           } else {
             return const NarrowLayout();
           }

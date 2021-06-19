@@ -21,12 +21,15 @@ class _WideLayoutState extends State<WideLayout> {
       color: Colors.blue,
       child: Row(
         children: [
-          Expanded(
-            flex: 2,
-            child: PeopleList(
-              onTap: (person) => setState(() {
-                _person = person;
-              }),
+          SizedBox(
+            width: 250,
+            child: Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: PeopleList(
+                onTap: (person) => setState(() {
+                  _person = person;
+                }),
+              ),
             ),
           ),
           Expanded(
